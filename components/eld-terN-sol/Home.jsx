@@ -12,6 +12,7 @@ import Section10 from "./Section10";
 import FloatingQueryTab from "./FloatingQueryTab";
 import Header from "./Header";
 import SmoothScroll from "./SmoothScroll";
+import Popup from "./Popup";
 
 /*
   Eldeco Terra & Sol landing page.
@@ -47,6 +48,7 @@ const Home = () => {
         <Section10 />
       </SmoothScroll>
       <FloatingQueryTab />
+      <Popup />
     </div>
   );
 };

@@ -50,18 +50,30 @@ export default function Section2() {
 
           {/* ── 1:77 metric row ───────────────────────────────────── */}
           <div className="flex w-full flex-wrap items-center justify-center gap-[20px] lg:gap-[43px]">
-            <div className="flex shrink-0 items-center justify-center bg-eld-bronze px-[44px] py-[10px]">
-              <p className="font-playfair-display text-[20px] leading-[normal] font-normal whitespace-pre text-eld-cream lg:text-[24px]">
+            <button
+              type="button"
+              data-open-popup
+              className="group flex shrink-0 cursor-pointer items-center justify-center bg-transparent px-[44px] py-[10px] transition-colors duration-300 hover:bg-eld-bronze"
+            >
+              <span className="font-playfair-display text-[20px] leading-[normal] font-normal whitespace-pre text-black transition-colors duration-300 group-hover:text-eld-cream lg:text-[24px]">
                 {`G+30  Floors`}
-              </p>
-            </div>
+              </span>
+            </button>
             {METRICS.map((metric) => (
-              <div key={metric} className="flex items-center gap-[20px] lg:gap-[43px]">
-                <span aria-hidden="true" className="hidden h-[61px] w-px shrink-0 bg-eld-cream lg:block" />
-                <p className="font-playfair-display text-[20px] leading-[normal] font-normal whitespace-nowrap text-black lg:text-[24px]">
+              <button
+                type="button"
+                data-open-popup
+                key={metric}
+                className="group relative flex shrink-0 cursor-pointer items-center justify-center bg-transparent px-[44px] py-[10px] transition-colors duration-300 hover:bg-eld-bronze"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute top-1/2 left-[-22px] hidden h-[61px] w-px -translate-y-1/2 bg-eld-cream transition-opacity duration-300 group-hover:opacity-0 lg:block"
+                />
+                <span className="font-playfair-display text-[20px] leading-[normal] font-normal whitespace-nowrap text-black transition-colors duration-300 group-hover:text-eld-cream lg:text-[24px]">
                   {metric}
-                </p>
-              </div>
+                </span>
+              </button>
             ))}
           </div>
 
@@ -85,13 +97,51 @@ export default function Section2() {
         </div>
 
         {/* ── 1:89 button row ─────────────────────────────────────── */}
-        <div className="flex w-full max-w-[334px] flex-wrap items-start justify-between gap-4">
-          <PillButton as="a" href="/brochure.pdf">
-            Download Brochure
-          </PillButton>
-          <EllipseLink as="a" href="#callback" tone="bronze">
-            Book a Site Visit
-          </EllipseLink>
+        <div className="flex w-full max-w-[390px] flex-nowrap items-start justify-between gap-4">
+          <a
+            href="/brochure.pdf"
+            data-open-popup
+            aria-label="Download Brochure"
+            className="group/morph relative block h-[44px] min-w-0 flex-1 hover:z-10 sm:w-[187px] sm:flex-none"
+          >
+            <PillButton
+              as="span"
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 w-full transition-[opacity,transform] duration-300 group-hover/morph:scale-95 group-hover/morph:opacity-0"
+            >
+              Download Brochure
+            </PillButton>
+            <EllipseLink
+              as="span"
+              tone="bronze"
+              aria-hidden="true"
+              className="pointer-events-none absolute top-[1px] left-0 w-full scale-95 opacity-0 transition-[opacity,transform] duration-300 group-hover/morph:scale-100 group-hover/morph:opacity-100"
+            >
+              Download Brochure
+            </EllipseLink>
+          </a>
+          <a
+            href="#callback"
+            data-open-popup
+            aria-label="Book a Site Visit"
+            className="group/morph relative block h-[44px] min-w-0 flex-1 hover:z-10 sm:w-[187px] sm:flex-none"
+          >
+            <PillButton
+              as="span"
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 w-full transition-[opacity,transform] duration-300 group-hover/morph:scale-95 group-hover/morph:opacity-0"
+            >
+              Book a Site Visit
+            </PillButton>
+            <EllipseLink
+              as="span"
+              tone="bronze"
+              aria-hidden="true"
+              className="pointer-events-none absolute top-[1px] left-0 w-full scale-95 opacity-0 transition-[opacity,transform] duration-300 group-hover/morph:scale-100 group-hover/morph:opacity-100"
+            >
+              Book a Site Visit
+            </EllipseLink>
+          </a>
         </div>
       </div>
     </section>

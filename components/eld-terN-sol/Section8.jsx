@@ -37,6 +37,7 @@ export default function Section8() {
         <div className="mx-auto mt-10 w-full max-w-[672px] lg:mt-[32px]">
           <button
             type="button"
+            data-open-popup
             aria-label="Play the virtual site tour"
             className="group relative block aspect-[672/319] w-full overflow-hidden"
           >

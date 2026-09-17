@@ -5,7 +5,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, MapPin } from "./ui/Icons";
-import { ASSETS } from "./ui/assets";
 
 gsap.registerPlugin(useGSAP);
 
@@ -23,7 +22,11 @@ const SLIDES = [
   "Iconic Luxury Apartments In Gurgaon",
 ];
 
-const SLIDE_IMAGES = [ASSETS.hero, ASSETS.hero, ASSETS.hero];
+const SLIDE_IMAGES = [
+  "/eldeco-terraNSole/home-slider/sl1.jpg",
+  "/eldeco-terraNSole/home-slider/sl2.jpg",
+  "/eldeco-terraNSole/home-slider/sl3.jpg",
+];
 
 export default function Section1() {
   const [slide, setSlide] = useState(0);
@@ -107,7 +110,7 @@ export default function Section1() {
             className="invisible absolute inset-0 block"
           >
             <Image
-              src={asset.src}
+              src={asset}
               alt=""
               fill
               preload={index === 0}
@@ -222,7 +225,7 @@ export default function Section1() {
         </div>
 
         {/* ── 1:101 footer-strip ─────────────────────────────────── */}
-        <div className="flex shrink-0 flex-col items-center gap-3 border-t border-[rgba(255,255,255,0.15)] bg-[rgba(11,8,7,0.95)] px-4 pt-[20px] pb-[24px] text-center sm:px-8 lg:flex-row lg:justify-between lg:gap-0 lg:px-[64px] lg:text-left">
+        <div className="relative left-1/2 flex w-screen shrink-0 -translate-x-1/2 flex-col items-center gap-3 border-t border-[rgba(255,255,255,0.15)] bg-[rgba(11,8,7,0.95)] px-4 pt-[20px] pb-[24px] text-center sm:px-8 lg:flex-row lg:justify-between lg:gap-0 lg:px-[64px] lg:text-left">
           {/* 1:102 highlights-container */}
           <ul className="flex flex-wrap items-center justify-center gap-x-[24px] gap-y-2 lg:justify-start">
             {HIGHLIGHT_TAGS.map((tag) => (

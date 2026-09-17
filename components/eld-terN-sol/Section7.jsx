@@ -97,6 +97,7 @@ export default function Section7() {
             </div>
             <a
               href={MAPS_URL}
+              data-open-popup
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Open in Google Maps"
@@ -128,6 +129,7 @@ export default function Section7() {
           <div className="flex flex-wrap items-center gap-[16px]">
             <a
               href={MAPS_URL}
+              data-open-popup
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-[6px]"
@@ -142,6 +144,7 @@ export default function Section7() {
             </span>
             <a
               href={MAPS_URL}
+              data-open-popup
               target="_blank"
               rel="noopener noreferrer"
               className="text-[12px] leading-[normal] font-semibold whitespace-nowrap text-eld-muted hover:text-eld-ink"

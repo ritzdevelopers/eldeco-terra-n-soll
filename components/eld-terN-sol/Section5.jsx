@@ -45,32 +45,14 @@ export default function Section5() {
         {/* ── 1:260 cards-row ───────────────────────────────────── */}
         <div className="flex w-full flex-wrap items-center justify-center gap-[40px]">
           {CARDS.map((card) => {
-            const isShader = card.id === "shader";
             return (
               <div
                 key={card.id}
                 className="relative flex h-[320px] w-full max-w-[380px] shrink-0 flex-col items-center justify-center lg:w-[380px]"
               >
                 <div
-                  className={`relative flex min-h-px w-full flex-1 flex-col items-center justify-center gap-[20px] overflow-hidden rounded-[12px] px-[32px] pt-[48px] pb-[24px] ${
-                    isShader
-                      ? "shadow-[0px_12px_24px_0px_rgba(0,0,0,0.06)]"
-                      : "bg-white drop-shadow-[0px_12px_12px_rgba(0,0,0,0.06)]"
-                  }`}
+                  className="relative flex min-h-px w-full flex-1 flex-col items-center justify-center gap-[20px] overflow-hidden rounded-[12px] bg-white px-[32px] pt-[48px] pb-[24px] drop-shadow-[0px_12px_12px_rgba(0,0,0,0.06)]"
                 >
-                  {isShader && (
-                    /*
-                      Figma renders this fill with a WebGL shader (an animated
-                      mesh gradient) whose runtime is not available outside
-                      Figma. Reproduced here as a static multi-stop mesh using
-                      the shader's exact gradient stops.
-                    */
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-0 rounded-[12px] bg-[radial-gradient(circle_at_18%_12%,#FFE99E_0%,transparent_58%),radial-gradient(circle_at_82%_26%,#8178FF_0%,transparent_60%),radial-gradient(circle_at_50%_100%,#FF009B_0%,transparent_65%),linear-gradient(135deg,#FFE99E_0%,#8178FF_52%,#FF009B_100%)]"
-                    />
-                  )}
-
                   {/* 1:263 price-container */}
                   <div className="relative flex w-full flex-col items-center">
                     <p className="w-full text-center text-[32px] leading-[normal] font-bold text-[#111]">
@@ -81,15 +63,11 @@ export default function Section5() {
                   {/* 1:265 Line */}
                   <div
                     aria-hidden="true"
-                    className={`relative h-px w-full ${isShader ? "bg-white/40" : "bg-eld-line-2"}`}
+                    className="relative h-px w-full bg-eld-line-2"
                   />
 
                   {/* 1:266 typology-container */}
-                  <div
-                    className={`relative flex w-full flex-col items-center gap-[6px] leading-[normal] whitespace-nowrap ${
-                      isShader ? "text-white" : "text-black"
-                    }`}
-                  >
+                  <div className="relative flex w-full flex-col items-center gap-[6px] leading-[normal] whitespace-nowrap text-black">
                     <div className="flex items-center gap-[8px]">
                       <p className="text-[14px] font-medium">Type:</p>
                       <p className="text-[15px] font-bold">{card.type}</p>
@@ -100,6 +78,7 @@ export default function Section5() {
                   {/* 1:271 cta-button */}
                   <a
                     href="#callback"
+                    data-open-popup
                     className="relative flex w-full items-center justify-center rounded-[6px] bg-eld-bronze px-[24px] py-[12px] transition-opacity hover:opacity-90"
                   >
                     <span className="text-[14px] leading-[normal] font-semibold whitespace-nowrap text-white uppercase">

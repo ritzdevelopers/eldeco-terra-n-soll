@@ -13,6 +13,7 @@ export default function FloatingQueryTab() {
   return (
     <a
       href="#callback"
+      data-open-popup
       className="fixed top-1/2 right-0 z-40 hidden -translate-y-1/2 flex-col items-center justify-center gap-[12px] rounded-tl-[12px] rounded-bl-[12px] bg-[#7b624a] px-[10px] py-[20px] drop-shadow-[-4px_4px_6px_rgba(0,0,0,0.15)] transition-opacity hover:opacity-90 lg:flex"
     >
       <Headset className="size-[20px] shrink-0 text-white" />

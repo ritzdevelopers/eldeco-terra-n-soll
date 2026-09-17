@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Plus } from "./ui/Icons";
-import { PillButton } from "./ui/Buttons";
-import { ASSETS } from "./ui/assets";
+import { EllipseLink, PillButton } from "./ui/Buttons";
 
 /*
   Section 4 — Modern Amenities  (Figma 1:180, y 2472-3346, bg white, h 874)
@@ -20,18 +19,54 @@ import { ASSETS } from "./ui/assets";
 */
 
 const AMENITIES = [
-  { title: "All Weather Infinity Pool" },
-  { title: "Lawn Tennis Court" },
-  { title: "Yoga & Aerobics" },
+  {
+    title: "All Weather Infinity Pool",
+    image: "/eldeco-terraNSole/amenities/infinity-pool.jpg",
+    description:
+      "A temperature-controlled infinity pool designed for refreshing swims, relaxed weekends, and year-round leisure.",
+  },
+  {
+    title: "Lawn Tennis Court",
+    image: "/eldeco-terraNSole/amenities/lawn-tenis.jpg",
+    description:
+      "A professionally planned outdoor tennis court offering residents an energetic and engaging sporting experience.",
+  },
+  {
+    title: "Yoga & Aerobics",
+    image: "/eldeco-terraNSole/amenities/yoga.jpg",
+    description:
+      "A peaceful wellness space created for yoga, aerobics, mindful movement, and rejuvenating daily fitness routines.",
+  },
   {
     title: "Jogging and Fitness Tracks",
+    image: "/eldeco-terraNSole/amenities/jogging.jpg",
     description:
       "Meticulously paved, tree-shaded woodlands engineered for morning runs and quiet evening walks, completely isolated from vehicular movement.",
   },
-  { title: "Landscaped Podium Greens" },
-  { title: "Badminton, Cricket, & Squash Court" },
-  { title: "3 High-Speed Lift Per Tower" },
-  { title: "Exclusive GQ Club" },
+  {
+    title: "Landscaped Podium Greens",
+    image: "/eldeco-terraNSole/amenities/landscaped.jpg",
+    description:
+      "Beautifully curated podium gardens with lush greenery, shaded seating, and serene spaces for everyday relaxation.",
+  },
+  {
+    title: "Badminton, Cricket, & Squash Court",
+    image: "/eldeco-terraNSole/amenities/bed-minton.jpg",
+    description:
+      "Dedicated courts for badminton, cricket, and squash, thoughtfully designed for recreation, practice, and friendly competition.",
+  },
+  {
+    title: "3 High-Speed Lift Per Tower",
+    image: "/eldeco-terraNSole/amenities/high-speed-lift.jpg",
+    description:
+      "Three high-speed elevators in each tower ensure smooth, efficient, and comfortable access with minimal waiting time.",
+  },
+  {
+    title: "Exclusive GQ Club",
+    image: "/eldeco-terraNSole/amenities/ExclusiveGQClub.jpg",
+    description:
+      "An exclusive residents’ clubhouse featuring refined social, leisure, and lifestyle spaces for memorable everyday experiences.",
+  },
 ];
 
 // 1:196 / 1:204 / ... — height of the rotated label box per collapsed panel.
@@ -53,9 +88,28 @@ export default function Section4() {
               Best Amenities In Gurgaon Residences
             </p>
           </div>
-          <PillButton as="a" href="#callback">
-            View All Amenities
-          </PillButton>
+          <a
+            href="#callback"
+            data-open-popup
+            aria-label="View All Amenities"
+            className="group/morph relative block h-[44px] w-[187px] shrink-0"
+          >
+            <PillButton
+              as="span"
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 w-full transition-[opacity,transform] duration-300 group-hover/morph:scale-95 group-hover/morph:opacity-0"
+            >
+              View All Amenities
+            </PillButton>
+            <EllipseLink
+              as="span"
+              tone="bronze"
+              aria-hidden="true"
+              className="pointer-events-none absolute top-[1px] left-0 w-full scale-95 opacity-0 transition-[opacity,transform] duration-300 group-hover/morph:scale-100 group-hover/morph:opacity-100"
+            >
+              View All Amenities
+            </EllipseLink>
+          </a>
         </div>
 
         {/* ── 1:190 accordion-track (desktop) ───────────────────── */}
@@ -85,8 +139,8 @@ export default function Section4() {
                   <div className="flex w-full flex-col items-start gap-[24px]">
                     <div className="relative h-[280px] w-full overflow-hidden rounded-[8px]">
                       <Image
-                        src={ASSETS.amenityActive.src}
-                        alt=""
+                        src={item.image}
+                        alt={item.title}
                         fill
                         sizes="(max-width: 1440px) 50vw, 696px"
                         className="rounded-[8px] object-cover"
@@ -104,6 +158,7 @@ export default function Section4() {
                   <div className="flex w-full items-center justify-between leading-[normal] whitespace-nowrap">
                     <a
                       href="#callback"
+                      data-open-popup
                       className="text-[13px] font-bold text-eld-ink-2 underline decoration-solid"
                     >
                       Enquire For Access
@@ -179,8 +234,8 @@ export default function Section4() {
                     <div className="px-4 pb-5">
                       <div className="relative aspect-[696/280] w-full overflow-hidden rounded-[8px]">
                         <Image
-                          src={ASSETS.amenityActive.src}
-                          alt=""
+                          src={item.image}
+                          alt={item.title}
                           fill
                           sizes="100vw"
                           className="rounded-[8px] object-cover"
@@ -193,6 +248,7 @@ export default function Section4() {
                       )}
                       <a
                         href="#callback"
+                        data-open-popup
                         className="mt-3 inline-block text-[13px] font-bold text-eld-ink-2 underline"
                       >
                         Enquire For Access

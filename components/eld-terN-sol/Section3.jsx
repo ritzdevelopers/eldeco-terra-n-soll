@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Check } from "./ui/Icons";
-import { EllipseLink } from "./ui/Buttons";
+import { EllipseLink, PillButton } from "./ui/Buttons";
 import { ASSETS } from "./ui/assets";
 
 /*
@@ -53,14 +53,28 @@ export default function Section3() {
 
         {/* 1:168 — Explore More Highlights */}
         <div className="mt-8 lg:mt-[-43px] lg:ml-auto lg:w-fit">
-          <EllipseLink
-            as="a"
+          <a
             href="#amenities"
-            tone="light"
-            className="w-[205px] max-w-full"
+            data-open-popup
+            aria-label="Explore More Highlights"
+            className="group/morph relative block h-[44px] w-[205px] max-w-full"
           >
-            Explore More Highlights
-          </EllipseLink>
+            <PillButton
+              as="span"
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 w-full border-white bg-white transition-[opacity,transform] duration-300 group-hover/morph:scale-95 group-hover/morph:opacity-0 [&>span]:text-eld-ink"
+            >
+              Explore More Highlights
+            </PillButton>
+            <EllipseLink
+              as="span"
+              tone="light"
+              aria-hidden="true"
+              className="pointer-events-none absolute top-[1px] left-0 w-full scale-95 opacity-0 transition-[opacity,transform] duration-300 group-hover/morph:scale-100 group-hover/morph:opacity-100"
+            >
+              Explore More Highlights
+            </EllipseLink>
+          </a>
         </div>
 
         {/* 1:124 — the 1269x425 panel with the masked photo */}

@@ -68,6 +68,7 @@ export default function Header() {
         <div className="flex shrink-0 items-center gap-[16px]">
           <a
             href="#callback"
+            data-open-popup
             className="hidden items-center gap-[8px] rounded-[4px] bg-white px-[24px] py-[12px] drop-shadow-[0px_4px_8px_rgba(0,0,0,0.25)] transition-opacity hover:opacity-90 sm:flex"
           >
             <span className="text-[13px] leading-[normal] font-bold whitespace-nowrap text-eld-ink uppercase">
