@@ -13,9 +13,9 @@ import { ASSETS } from "./ui/assets";
 */
 
 const PARAGRAPHS = [
-  "Premium residential property in Gurugram from Eldeco Group. It is an exceptional fusion of luxurious comfort and unparalleled connectivity and modern metropolitan living. An over 2.7 acre property with 200 well-appointed homes and 40+ international standard lifestyle features.",
-  "Only 4 apartments per core, this residential project, consisting of 3 BHK and 3.5 BHK luxury apartments at Sector 80, has been conceptualized for the select few, offering absolute privacy and exclusivity. All the apartments have been designed to provide maximum refreshing airflow and abundant natural light and cross-ventilation, built more than 30 feet above the ground level.",
-  "An array of thoughtfully planned and meticulously curated amenities add the touch of rejuvenation and recreation to your lifestyle at Eldeco Terra & Sol.",
+  "Eldeco Terra & Sol is a new launch project in Sector 80, Gurugram, where luxury takes its cue from Japanese design and calm, balance and a closeness to nature shape every part of daily life. The project offers palatial 3 BHK apartments in Gurugram, presented as 3 BR World Residences and starting at ₹3.33 Cr*, for families who want generous space and quiet sophistication in a HARERA-registered residential project. As one of the most distinctive Eldeco projects in Gurugram, it brings Japanese-inspired luxury homes to buyers searching for luxury apartments in Gurgaon that feel different from the usual high-rise.",
+  "For a limited period, owning a luxury 3 BHK flat in Sector 80, Gurugram is easier than ever. Under a no-EMI payment scheme with Bajaj Housing Finance, you pay just 10%** now and nothing for the next 36 months, and you also receive a timely payment rebate of ₹500 per sq.ft.* If you are comparing new residential projects in Gurugram or looking for the Eldeco Terra & Sol price and payment plan, share your details below and our team will walk you through the offer before it closes.",
+  "*T&C apply. **The no-EMI scheme is offered by Bajaj Housing Finance, and all EMI and interest liability rests between Bajaj Housing Finance and the home buyer. HARERA Reg. No. 20 of 2026. Images are artistic impressions.",
 ];
 
 const METRICS = ["Only 2 Towers", "224 Total units", "2.7 Acres Land Parcel"];

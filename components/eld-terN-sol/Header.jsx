@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Close, Menu, WhatsApp } from "./ui/Icons";
+import { ArrowRight, Close, Menu } from "./ui/Icons";
 import { ASSETS } from "./ui/assets";
 
 const NAV_LINKS = [
@@ -76,15 +76,6 @@ export default function Header() {
             </span>
             <ArrowRight className="size-[12px] shrink-0 text-eld-ink" />
           </a>
-          <a
-            href="https://wa.me/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp"
-            className="flex items-center justify-center rounded-[4px] bg-white px-[14px] py-[10px] drop-shadow-[0px_4px_8px_rgba(0,0,0,0.25)] transition-opacity hover:opacity-90"
-          >
-            <WhatsApp className="size-[20px] shrink-0 text-eld-ink" />
-          </a>
           <button
             type="button"
             onClick={() => setMenuOpen((value) => !value)}
@@ -105,7 +96,7 @@ export default function Header() {
 
       <div
         aria-hidden={!menuOpen}
-        className={`grid bg-[rgba(11,8,7,0.95)] backdrop-blur transition-[grid-template-rows,border-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] xl:hidden ${
+        className={`grid  backdrop-blur transition-[grid-template-rows,border-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] xl:hidden ${
           menuOpen
             ? "grid-rows-[1fr] border-y border-white/15"
             : "pointer-events-none grid-rows-[0fr] border-y border-transparent"
